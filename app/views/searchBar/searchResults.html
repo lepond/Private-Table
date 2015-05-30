@@ -1,16 +1,15 @@
-<div ng-repeat="info in data">
-  <div><a href="/#/checkout/room"> {{info.title}}</a> </div>
-  </div>
-
-  <div ng-repeat="room in roomResults">
-    <div> <a href="{{room.url}}">{{room.property}}</a></div>
-    <div> <a href="{{room.url}}">{{room.venue}}</a></div>
-    <!-- define styles for preview-image-container, preview-image-container a, and for contact assets below -->
-    <div class="preview-image-container" style="background-image:url({{room.venueImage}})">
-      <div> <a href="{{room.url}}"> VIEW </a></div>
-      <img src="{{room.contactImage}}">
-      <div>{{room.contactName}}</div>
-      <div>{{room.contactTitle}}</div>
+<div ng-controller="searchResultsController">
+  <div class="row">
+    <div class="medium-6 columns" ng-repeat="room in roomResults | filter: bookingType(room)">
+      <div> <a href="{{room.url}}">{{room.property}}</a></div>
+      <div> <a href="{{room.url}}">{{room.venue}}</a></div>
+      <!-- define styles for preview-image-container, preview-image-container a, and for contact assets below -->
+      <div class="preview-image-container" style="background-image:url({{room.venueImage}})">
+        <div> <a href="{{room.url}}"> VIEW </a></div>
+        <img src="{{room.contactImage}}">
+        <div>{{room.contactName}}</div>
+        <div>{{room.contactTitle}}</div>
+      </div>
     </div>
   </div>
 </div>

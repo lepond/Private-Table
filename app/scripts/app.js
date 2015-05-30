@@ -41,6 +41,26 @@ angular
           }
         }
       })
+      .state('favorites', {
+        url: '/favorites',
+        views: {
+          '': {templateUrl: 'views/favorites.html'},
+          'searchResults@favorites': {
+            templateUrl: 'views/searchBar/searchResults.html',
+            controller: 'searchResultsController'
+          }
+        }
+      })
+      .state('bookings', {
+        url: '/bookings',
+        views: {
+          '': {templateUrl: 'views/bookings.html'},
+          'searchResults@bookings': {
+            templateUrl: 'views/searchBar/searchResults.html',
+            controller: 'searchResultsController'
+          }
+        }
+      })
       .state('checkout', {
         url: '/checkout',
         views: {
@@ -50,7 +70,6 @@ angular
           }
         }
       })
-
       .state('checkout.room', {
         url: '/room',
         templateUrl: 'views/checkout/room.html'

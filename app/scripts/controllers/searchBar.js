@@ -11,6 +11,7 @@ angular.module('privateTableApp')
     $scope.init = function () {
       SearchBar.searchFormInit();
       $scope.params = SearchBar.getSearchParams();
+      SearchResults.showAll();
     };
 
     $scope.setMinEndTime = function () {
