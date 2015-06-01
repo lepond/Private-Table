@@ -32,6 +32,10 @@ angular.module('privateTableApp')
       $scope.room = roomData.getRoom();
     };
 
+    $scope.setMinEndTime = function () {
+      var minEndTime = SearchBar.endTimeAdjuster(this.params.startTime);
+      $('#eventend').datetimepicker({datepicker:false, format: 'g:i A', formatTime: 'g:i A', step: 30, minTime: minEndTime});
+    };
 
     $scope.dateInit();
 

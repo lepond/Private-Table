@@ -62,20 +62,19 @@
 
 <!-- event part of panel end -->
 
-
-<span class="small-12 columns">
+<span ng-show="eventConfirmed" class="small-12 columns">
   <div class="row">
     <p class="small-12 columns"> {{params.date}} from {{params.startTime}} to {{params.endTime}} </p>
   </div>
 </span>
 
 
-<span id= "small-12 columns">
+<span ng-show="eventConfirmed" id="small-12 columns">
   <div class="row">
     <p class="small-11 small-offset-1 columns"> for {{params.guests}} Guests</p>
   </div>
 </span>
-
+</ng-show>
 
 
 
@@ -92,12 +91,12 @@
 
   <span class= "small-3 columns" id="changepadding">
     <label> Start Time </label>
-    <input class="timepicker" placeholder="Time" type="text" ng-model="params.startTime">
+    <input class="timepicker" placeholder="Time" type="text" ng-change="setMinEndTime()" ng-model="params.startTime">
   </span>
 
   <span class= "small-3 columns" id="changepadding">
     <label> End Time </label>
-    <input class="timepicker" placeholder="Time" type="text" ng-model="params.endTime">
+    <input class="timepicker" id="eventend" placeholder="Time" type="text" ng-model="params.endTime">
   </span>
 
   <select ng-model="params.eventType">
@@ -123,7 +122,13 @@
         <p class="small-6 columns"><strong>MENU</strong></p>
       </div>
     </span>
+    <span ng-show="menuConfirmed" class="small-12 columns">
+  <div class="row">
+    <p class="small-12 columns"> {{params.menu}} </p>
+  </div>
+</span>
 </div>
+
 
   <div ng-hide="menuConfirmed">
     <span id= "small-4 columns">
@@ -135,11 +140,11 @@
       </div>
     </span>
 
-    <select ng-model="params.eventType">
+    <select ng-model="params.menu">
       <option value="" selected disabled>Select a Menu</option>
-      <option value="Reception">Yummy</option>
-      <option value="Banquet">Yum</option>
-      <option value="Reception and Banquet">Yum</option>
+      <option value="Seafood Fest">Seafood Fest</option>
+      <option value="Surf and Turf">Surf and Turf</option>
+      <option value="All you can eat">All you can eat</option>
     </select>
 
     <div class="text-center">$3200</div>
