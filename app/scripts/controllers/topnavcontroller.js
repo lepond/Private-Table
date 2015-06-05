@@ -69,6 +69,7 @@ angular.module('privateTableApp')
     };
 
     $scope.logout = function () {
+      console.log('logout called');
       Auth.logout();
       $scope.currentUser = Auth.getUser();
       console.log($scope.currentUser);

@@ -1,6 +1,41 @@
+<div ng-controller="navController">
+  <top-bar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a ui-sref="landing" target="_self"><img src="../images/logo.png"></a></h1>
+      </li> 
+    </ul>
+    <top-bar-section>
 
+      <ul ng-if="currentUser.username" class="left">
+        <li class="lgnMenu"><a ui-sref="bookings"><img  src="/images/notebook.png"></a></li>
+        <li class="lgnMenu"><a ui-sref="favorites"><img src="/images/favorite.png"></a></li>
+      </ul>
+
+      <ul ng-if="!currentUser.username" class="right">
+        <li><a ng-click="toggleLogin()">Login</a></li>
+        <li><a ng-click="toggleSignUp()">Sign up </a></li>
+      </ul>
+
+      <ul ng-if="currentUser.username" class="right">
+        <li has-dropdown><a href="#">Hello, {{currentUser.username}}!</a>
+          <ul top-bar-dropdown>
+            <li><a ng-click="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </top-bar-section>
+  </top-bar>
+   <modal-dialog show='signUpShown' dialog-title='Signup:'>
+      <div ng-include src="'/views/accounts/signuppartial.html'"></div>
+    </modal-dialog>
+     <modal-dialog show='loginShown' dialog-title='Login:'>
+      <div ng-include src="'/views/accounts/loginpartial.html'"></div>
+     </modal-dialog>
+</div>
+<!-- 
 <div ng-controller="navController"
-  <nav data-topbar="" role="navigation" data-options="is_hover: true" class="top-bar" >
+  <nav data-topbar="" role="navigation" data-options="is_hover: true" class="top-bar">
     <ul class="title-area">
       <li class="name">
         <h1><a ui-sref="landing" target="_self"><img src="../images/logo.png"></a></h1>
@@ -14,13 +49,17 @@
       </ul>
 
       <ul ng-if="!currentUser.username" class="right">
-         <li><a ng-click="toggleLogin()">Login</a></li>
+        <li><a ng-click="toggleLogin()">Login</a></li>
         <li><a ng-click="toggleSignUp()">Sign up </a></li>
       </ul>
 
       <ul ng-if="currentUser.username" class="right">
-        <li><a>Hello, {{currentUser.username}}!</a></li>
-        <li><a ng-click="logout()">Logout</a></li>
+        <li class="has-dropdown"><a href="#">Hello, {{currentUser.username}}!</a>
+          <ul class="dropdown" >
+            <li ng-click="logout()"><a ng-click="logout()">Logout</a></li>
+          </ul>
+        </li>
+        <li ng-controller="navController" ng-click="logout()"><a>Logout</a></li>
       </ul>
 
     </section>
@@ -32,4 +71,4 @@
      <modal-dialog show='loginShown' dialog-title='Login:'>
       <div ng-include src="'/views/accounts/loginpartial.html'"></div>
      </modal-dialog>
-</div>
+</div> -->
