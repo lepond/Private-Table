@@ -12,11 +12,11 @@
         </div>
 
         <div class="medium-1 columns">
-          <input class="timepicker" ng-change="newSearch()" placeholder="Start Time" type="text" ng-change="setMinEndTime()" ng-model="params.startTime">
+          <input id="starttimepicker" class="timepicker" ng-change="newSearch(); setMinEndTime()" placeholder="Start Time" type="text" ng-model="params.startTime">
         </div>
 
         <div class="medium-1 columns">
-          <input id="endtime" class="timepicker" ng-change="newSearch()" placeholder="End Time" type="text" ng-model="params.endTime">
+          <input id="endtimepicker" class="timepicker" ng-change="newSearch()" placeholder="End Time" type="text" ng-model="params.endTime">
         </div>
 
         <div class="medium-2 columns">

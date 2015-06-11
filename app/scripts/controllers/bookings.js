@@ -1,6 +1,6 @@
 angular.module('privateTableApp')
   .controller('bookingsController', ['$scope', 'SearchResults', function( $scope, SearchResults) {
-    //This controller determines how the ngRepeat in searchResults view is filtered.
+/*    //This controller determines how the ngRepeat in searchResults view is filtered.
     $scope.init = function () {
       this.showAll();
       //searchBar.get
@@ -16,5 +16,5 @@ angular.module('privateTableApp')
       SearchResults.showPlanning();
     };
 
-    $scope.init();
+    $scope.init();*/
   }]);

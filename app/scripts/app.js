@@ -113,5 +113,7 @@ angular
           }
         });
       });
+      // $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+      // });
     });
       // $locationProvider.html5Mode(true).hashPrefix('!');
