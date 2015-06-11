@@ -23,7 +23,7 @@ angular.module('privateTableApp')
       var minEndTime = SearchBar.endTimeAdjuster($scope.params.startTime);
       console.log('THIS IS MINEND', minEndTime);
       $('#endtimepicker').datetimepicker({datepicker:false, format: 'g:i A', formatTime: 'g:i A', step: 30, minTime: minEndTime});
-      // $('#starttimepicker').datetimepicker({datepicker:false, format: 'g:i A', formatTime: 'g:i A', step: 30});
+      $('#starttimepicker').datetimepicker({datepicker:false, format: 'g:i A', formatTime: 'g:i A', step: 30, minTime: '12:00 AM'});
     };
     
     $scope.init();
